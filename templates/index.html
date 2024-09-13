@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Video Çeviri</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>YouTube Video Çeviri</h1>
+        <form id="translation-form">
+            <label for="youtube_url">YouTube Video URL'si:</label>
+            <input type="text" id="youtube_url" name="youtube_url" required>
+            
+            <label for="target_language">Hedef Dil:</label>
+            <select id="target_language" name="target_language">
+                <option value="tr">Türkçe</option>
+                <option value="en">İngilizce</option>
+                <option value="fr">Fransızca</option>
+                <option value="de">Almanca</option>
+                <option value="es">İspanyolca</option>
+            </select>
+            
+            <button type="submit">Videoyu Çevir</button>
+        </form>
+        <div id="result"></div>
+        <div id="video-container" style="display: none;">
+            <video id="translated-video" controls>
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
